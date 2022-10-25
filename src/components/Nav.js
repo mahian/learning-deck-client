@@ -6,6 +6,9 @@ import { authContext } from '../context/UserContext';
 
 const Nav = () => {
     const { user } = useContext(authContext);
+    const handleLogOut = () => {
+        
+    }
     return (
         <nav className='shadow-md'>
             <div className="navbar container mx-auto">
@@ -50,7 +53,7 @@ const Nav = () => {
                                         </Link>
                                     </li>
                                     <li><Link>Settings</Link></li>
-                                    <li><Link>Logout</Link></li>
+                                    <li><Link onClick={handleLogOut}>Logout</Link></li>
                                 </ul>
                             </div>
                         </div>

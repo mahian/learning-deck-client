@@ -7,6 +7,7 @@ import Error from './components/Error';
 import Blog from './components/Blog';
 import Login from './components/Login';
 import Register from './components/Register';
+import PrivetRoute from './privet-route/PrivetRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -20,7 +21,7 @@ function App() {
         },
         {
           path: 'courses',
-          element: <Courses />,
+          element: <PrivetRoute><Courses /></PrivetRoute>,
         },
         {
           path: 'blogs',
