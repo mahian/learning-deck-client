@@ -5,9 +5,11 @@ import { authContext } from '../context/UserContext';
 
 
 const Nav = () => {
-    const { user } = useContext(authContext);
+    const { user, logOut } = useContext(authContext);
     const handleLogOut = () => {
-        
+        logOut()
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
     }
     return (
         <nav className='shadow-md'>
