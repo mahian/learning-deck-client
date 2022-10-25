@@ -1,7 +1,11 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { authContext } from '../context/UserContext';
+
 
 const Nav = () => {
+    const {user} = useContext(authContext);
     return (
         <nav className='container mx-auto'>
             <div className="navbar bg-base-100">
