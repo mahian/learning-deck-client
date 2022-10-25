@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProviderSignIn from './ProviderSignIn';
 
 const Register = () => {
     return (
@@ -36,6 +37,12 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+                            <div className='flex items-center'>
+                                <div className='h-[1px] w-full bg-gray-300'></div>
+                                <p className='mx-2 text-gray-300 whitespace-nowrap'>or sign up with</p>
+                                <div className='h-[1px] w-full bg-gray-300'></div>
+                            </div>
+                            <ProviderSignIn></ProviderSignIn>
                         </div>
                     </div>
                 </div>
