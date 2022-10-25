@@ -31,10 +31,11 @@ const blogs = [
 const Blog = () => {
     return (
         <section className='py-10 container mx-auto'>
+        <h2 className='text-center font-bold text-5xl mb-10'>Our Blogs</h2>
             {
-                blogs.map(blog => <div>
+                blogs.map(blog => <div key={blog.id} className='bg-slate-100 my-4 p-5 border-t-2 border-primary'>
                     <h2 className='text-2xl font-bold mb-4'>{blog.title}</h2>
-                    <p className='text-xl mb-4'>{blog.content}</p>
+                    <p className='text-xl'>{blog.content}</p>
                 </div>)
             }
         </section>

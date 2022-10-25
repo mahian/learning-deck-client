@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Courses from './components/Courses';
 import Error from './components/Error';
 import Blog from './components/Blog';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +25,14 @@ function App() {
         {
           path: 'blogs',
           element: <Blog />,
+        },
+        {
+          path: 'login',
+          element: <Login />,
+        },
+        {
+          path: 'register',
+          element: <Register />,
         },
         {
           path: '*',

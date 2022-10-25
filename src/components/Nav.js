@@ -23,10 +23,10 @@ const Nav = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='courses'>Courses</Link></li>
                         <li><Link to='blogs'>Blog</Link></li>
-                        <li><Link to='error'>error</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <Link className='mx-4' to='login'>Login</Link>
                     <Link to='login' className="btn btn-primary">Get started</Link>
                 </div>
             </div>
