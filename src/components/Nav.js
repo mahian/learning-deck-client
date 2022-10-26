@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
+import { UserCircleIcon } from '@heroicons/react/24/solid'
 
 
 const Nav = () => {
@@ -49,7 +50,7 @@ const Nav = () => {
                             <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
-                                        <img src={user.photoURL} alt="user"/>
+                                        {!user.photoURL ? <UserCircleIcon className='h-10 w-10'/> : <img src={user.photoURL} alt="user"/>}
                                     </div>
                                 </label>
                                 <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">

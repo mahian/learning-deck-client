@@ -53,7 +53,7 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary">Sigh up</button>
                             </div>
                             <div className='flex items-center'>
                                 <div className='h-[1px] w-full bg-gray-300'></div>
