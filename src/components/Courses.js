@@ -16,7 +16,7 @@ const Courses = () => {
             setCourses(json);
         }
         fetchCourses();
-    }, [])
+    }, [id])
     const handleClick = (id) => {
         setId(id);
     }
@@ -26,7 +26,7 @@ const Courses = () => {
                 <SectionTitle name='Our courses'/>
                 <div className='flex'>
                     <div className='w-96 mr-3'><SideBar handleClick={handleClick}/></div>
-                    <div className='container mx-auto grid md:grid-cols-3 gap-4'>
+                    <div className='container mx-auto grid md:grid-cols-2 gap-4'>
                         {
                             courses.map(course => <Course key={course.id} course={course}/>)
                         }
