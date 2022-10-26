@@ -2,17 +2,22 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
-import { UserCircleIcon } from '@heroicons/react/24/solid'
+import { MoonIcon, SunIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import { useState } from 'react';
 
 
 const Nav = () => {
     const { user, logOut } = useContext(authContext);
+    const [dark, setDark] = useState(false);
     console.log(user);
     const handleLogOut = (e) => {
         e.preventDefault()
         logOut()
         .then(res => console.log(res))
         .catch(err => console.log(err))
+    }
+    const handleTheme = () => {
+        setDark(!dark);
     }
     return (
         <nav className='shadow-md'>
@@ -40,13 +45,19 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <div onClick={handleTheme} className={`w-10 h-10 p-1 rounded-full cursor-pointer mr-5 ${!dark ? 'bg-black text-white' : 'bg-gray-50'}`}>
+                        {!dark ? 
+                        <MoonIcon /> :
+                        <SunIcon />
+                        }
+                    </div>
                     {!user ?
                         <div>
                             <Link className='mx-4' to='login'>Login</Link>
                             <Link to='register' className="btn btn-primary">sign up</Link>
                         </div> :
                         <div className='flex items-center'>
-                            <p className='font-bold mr-2'>{user.displayName}</p>
+                            <p className='font-bold mr-2 hidden md:block'>{user.displayName}</p>
                             <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">

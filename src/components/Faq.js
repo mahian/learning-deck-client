@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react';
+import SectionTitle from '../utilitys/SectionTitle';
 
 const faqData = [
     {
@@ -42,7 +43,7 @@ const FaqElement = ({ faq }) => {
 const Faq = () => {
     return (
         <div className='container mx-auto relative py-10'>
-            <h2 className='mb-10 text-5xl text-center font-bold'>faq qestion</h2>
+            <SectionTitle name='faq question'/>
             <div className='grid md:grid-cols-2'>
                 <div>
                     {faqData.map(faq => <FaqElement faq={faq} />)}
