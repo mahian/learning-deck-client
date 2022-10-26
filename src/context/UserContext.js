@@ -22,7 +22,7 @@ const UserContext = ({ children }) => {
     }
 
     const logOut = () => {
-        signOut(auth)
+        signOut(auth);
     }
 
 

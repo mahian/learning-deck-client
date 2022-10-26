@@ -6,7 +6,9 @@ import { authContext } from '../context/UserContext';
 
 const Nav = () => {
     const { user, logOut } = useContext(authContext);
-    const handleLogOut = () => {
+    console.log(user);
+    const handleLogOut = (e) => {
+        e.preventDefault()
         logOut()
         .then(res => console.log(res))
         .catch(err => console.log(err))
@@ -23,6 +25,7 @@ const Nav = () => {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='courses'>Courses</Link></li>
                             <li><Link to='blogs'>Blog</Link></li>
+                            <li><Link to='faq'>faq</Link></li>
                         </ul>
                     </div>
                     <Link to='/'><img className='h-10' src="assets/logo.png" alt="" /></Link>
@@ -32,6 +35,7 @@ const Nav = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='courses'>Courses</Link></li>
                         <li><Link to='blogs'>Blog</Link></li>
+                        <li><Link to='faq'>faq</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -40,7 +44,8 @@ const Nav = () => {
                             <Link className='mx-4' to='login'>Login</Link>
                             <Link to='register' className="btn btn-primary">sign up</Link>
                         </div> :
-                        <div>
+                        <div className='flex items-center'>
+                            <p className='font-bold mr-2'>{user.displayName}</p>
                             <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
@@ -55,7 +60,7 @@ const Nav = () => {
                                         </Link>
                                     </li>
                                     <li><Link>Settings</Link></li>
-                                    <li><Link onClick={handleLogOut}>Logout</Link></li>
+                                    <li><Link to='/' onClick={handleLogOut}>Logout</Link></li>
                                 </ul>
                             </div>
                         </div>

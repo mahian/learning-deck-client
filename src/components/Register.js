@@ -1,18 +1,26 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
 import ProviderSignIn from './ProviderSignIn';
 
 const Register = () => {
     const { createUser } = useContext(authContext);
+    const navigate = useNavigate()
+    console.log(navigate);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password);
+        createUser(email, password)
+        .then(res => {
+            form.reset()
+            navigate('/');
+            alert('user created successfully')
+        })
+        .catch(err => alert(err.message));
     }
     return (
         <section className='py-10'>
