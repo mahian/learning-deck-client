@@ -2,9 +2,9 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <section className='bg-slate-100'>
+        <section className=''>
             <div className='container mx-auto'>
-                <div className="hero min-h-screen">
+                <div className="hero">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <img src="assets/learning.jpg" className="max-w-sm rounded-lg" alt=''/>
                         <div>
