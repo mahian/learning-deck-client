@@ -1,6 +1,19 @@
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Live site Link
+https://learning-deck.web.app/
+
+## what did i do
+
+1. exploring learning platform 
+2. firebase authentication system
+3. create project with daisy ui
+4. react router
+5. context api
 
 ## Available Scripts
 

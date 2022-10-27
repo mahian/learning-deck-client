@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
