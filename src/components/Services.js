@@ -3,7 +3,7 @@ import { AcademicCapIcon, ArrowRightIcon } from '@heroicons/react/24/solid'
 
 const Services = () => {
     return (
-        <section className='bg-slate-100 py-10'>
+        <section className='bg-slate-100 py-[80px]'>
             <div className='container mx-auto grid md:grid-cols-3'>
                 <div className='bg-white p-10 m-5 rounded-xl'>
                     <AcademicCapIcon className='w-20'/>

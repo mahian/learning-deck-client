@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import PrivetRoute from './privet-route/PrivetRoute';
 import Faq from './components/Faq';
+import CourseDetail from './components/CourseDetail';
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ function App() {
         {
           path: 'courses',
           element: <PrivetRoute><Courses /></PrivetRoute>,
+        },
+        {
+          path: 'courses/course-detail',
+          element: <PrivetRoute><CourseDetail /></PrivetRoute>,
         },
         {
           path: 'blogs',

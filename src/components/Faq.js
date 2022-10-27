@@ -42,14 +42,14 @@ const FaqElement = ({ faq }) => {
 
 const Faq = () => {
     return (
-        <div className='container mx-auto relative py-10'>
+        <div className='container mx-auto relative py-[80px]'>
             <SectionTitle name='faq question'/>
-            <div className='grid md:grid-cols-2'>
-                <div>
+            <div className='flex flex-col-reverse md:flex-row items-center'>
+                <div className='md:w-6/12 my-5'>
                     {faqData.map(faq => <FaqElement faq={faq} />)}
                 </div>
-                <div>
-                    <img src="assets/learning-2.png" alt="" />
+                <div className='flex justify-center md:w-6/12'>
+                    <img className='md:max-w-sm' src="assets/faq.jpg" alt="" />
                 </div>
             </div>
         </div>
