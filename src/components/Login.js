@@ -1,11 +1,14 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
 import ProviderSignIn from './ProviderSignIn';
 
 const Login = () => {
     const { loginWithEmail } = useContext(authContext);
+    const location = useLocation()
+    const from = location.state?.form?.pathname || '/';
     const navigate = useNavigate()
     console.log(navigate);
     const handleSubmit = event => {
@@ -16,7 +19,7 @@ const Login = () => {
         loginWithEmail(email, password)
         .then(res => {
             form.reset()
-            navigate('/');
+            navigate(from, {replace : true});
             alert('logged in successfully')
         })
         .catch(err => alert(err.message));

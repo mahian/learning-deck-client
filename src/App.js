@@ -1,5 +1,5 @@
 import './App.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useParams } from 'react-router-dom';
 import Root from './layout/Root';
 import Home from './components/Home';
 import Courses from './components/Courses';
@@ -10,6 +10,7 @@ import Register from './components/Register';
 import PrivetRoute from './privet-route/PrivetRoute';
 import Faq from './components/Faq';
 import CourseDetail from './components/CourseDetail';
+import CheckOut from './components/CheckOut';
 
 function App() {
   const router = createBrowserRouter([
@@ -26,8 +27,14 @@ function App() {
           element: <PrivetRoute><Courses /></PrivetRoute>,
         },
         {
-          path: 'courses/course-detail',
+          path: 'courses/course-detail/:id',
+          loader: ({params})=> fetch(`https://learning-deck-server.vercel.app/courses/${params.id}`),
           element: <PrivetRoute><CourseDetail /></PrivetRoute>,
+        },
+        {
+          path: 'courses/checkout/:id',
+          loader: ({params})=> fetch(`https://learning-deck-server.vercel.app/courses/${params.id}`),
+          element: <PrivetRoute><CheckOut /></PrivetRoute>,
         },
         {
           path: 'blogs',

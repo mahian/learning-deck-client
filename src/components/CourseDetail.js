@@ -1,21 +1,35 @@
 import React from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { CheckCircleIcon, DocumentIcon } from '@heroicons/react/24/solid';
+import Pdf from 'react-to-pdf'
 
 const CourseDetail = () => {
+    const CourseDetail = useLoaderData();
+    const { id, title, description, image, duration } = CourseDetail;
+    const ref = React.createRef();
+
     return (
-        <div>
+        <div ref={ref}>
             <div className='relative flex justify-center items-center'>
-                <img className='w-full h-96 object-cover' src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/fGWjtyQtG4JE7UXgaPAN" alt="tut" />
+                <img className='w-full h-96 object-cover' src={image} alt="tut" />
                 <div className='bg-black absolute top-0 w-full h-full opacity-70'>
                 </div>
-                <h2 className='text-6xl font-bold absolute text-white'>React Full course</h2>
+                <h2 className='text-6xl font-bold absolute text-white'>{title}</h2>
             </div>
             <div className='container mx-auto my-[80px]'>
                 <div className='md:flex justify-between'>
-                    <div className='bg-gray-100 p-5 font-bold m-5 text-green-500 w-full'>duration : 30D</div>
+                    <div className='bg-gray-100 p-5 font-bold m-5 text-green-500 w-full'>duration : {duration}D</div>
                     <div className='bg-gray-100 p-5 font-bold m-5 text-red-500 w-full'>total student : 117</div>
                     <div className='bg-gray-100 p-5 font-bold m-5 text-blue-400 w-full'>reating : 4.5</div>
                 </div>
-                <p className='md:w-6/12 mt-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima exercitationem molestias, natus commodi reprehenderit beatae adipisci ut, eius consequuntur voluptatibus minus id quidem necessitatibus! Temporibus, incidunt nesciunt! Qui recusandae, ex explicabo dolores magnam perspiciatis similique. Dicta, perspiciatis commodi quae excepturi quidem sit obcaecati necessitatibus ad accusantium odit fugit saepe quas veniam nisi? Officia animi reprehenderit, molestiae consequatur cupiditate voluptate quos pariatur rem ratione sed dicta in nihil non consequuntur eos!</p>
+                <p className='md:w-6/12 mt-5'>{description}</p>
+                <div className='mt-10'>
+                    <Pdf targetRef={ref} filename="code-example.pdf">
+                        {({ toPdf }) => <button onClick={toPdf} className='btn btn-outline btn-success font-bold mr-5'>get pdf <DocumentIcon className='w-4 ml-2' /></button>}
+                    </Pdf>
+
+                    <Link to={`../courses/checkout/${id}`}><button className="btn btn-outline btn-error font-bold">checkout <CheckCircleIcon className='w-4 ml-2' /></button></Link>
+                </div>
             </div>
         </div>
     );

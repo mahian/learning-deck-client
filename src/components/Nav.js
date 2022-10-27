@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
-import { MoonIcon, SunIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import { MoonIcon, SunIcon, UserCircleIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 
 

@@ -20,8 +20,8 @@ const Courses = () => {
     }
     return (
         <section className='bg-slate-300'>
-            <div className='flex h-screen'>
-                <div className='w-96 mr-3'><SideBar handleClick={handleClick} /></div>
+            <div className='md:flex md:h-screen'>
+                <div className='md:w-96 mr-3'><SideBar handleClick={handleClick} /></div>
                 <div className='overflow-y-scroll no-scrollbar'>
                     <div className='grid md:grid-cols-2 gap-10 p-10'>
                         {

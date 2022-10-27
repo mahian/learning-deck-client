@@ -20,23 +20,23 @@ const UserContext = ({ children }) => {
     }
 
     const loginWithEmail = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     const signInWithGoogle = ()=> {
-        signInWithPopup(auth, googleProvider);
+        return signInWithPopup(auth, googleProvider);
     }
 
     const signInWithGithub = ()=> {
-        signInWithPopup(auth, githubProvider);
+        return signInWithPopup(auth, githubProvider);
     }
 
     const signInWithFacebook = ()=> {
-        signInWithPopup(auth, facebookProvider);
+        return signInWithPopup(auth, facebookProvider);
     }
 
     const logOut = () => {
-        signOut(auth);
+        return signOut(auth);
     }
 
 
