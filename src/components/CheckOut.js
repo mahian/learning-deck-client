@@ -7,7 +7,7 @@ const CheckOut = () => {
     const {user} = useContext(authContext);
     return (
         <section className='bg-gray-200 py-[80px]'>
-            <div className='container mx-auto md:h-96 flex items-end'>
+            <div className='container mx-auto md:h-96 flex items-end px-3'>
                 <div className='bg-white flex p-5 items-center justify-between rounded-lg m-auto md:max-w-[650px] flex-wrap'>
                     <img className='w-[100px] rounded-lg mr-3' src={image} alt="" />
                     <div>

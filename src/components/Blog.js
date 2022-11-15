@@ -26,7 +26,7 @@ const blogs = [
 
 const Blog = () => {
     return (
-        <section className='py-10 container mx-auto'>
+        <section className='py-10 container mx-auto px-3'>
         <SectionTitle name='Blog'/>
             {
                 blogs.map(blog => <div key={blog.id} className='bg-slate-100 my-4 p-5 border-t'>

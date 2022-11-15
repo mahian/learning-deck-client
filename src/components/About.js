@@ -5,7 +5,7 @@ import SectionTitle from '../utilitys/SectionTitle';
 const About = () => {
     return (
         <section className='py-[80px]'>
-            <div className='container mx-auto'>
+            <div className='container mx-auto px-3'>
                 <SectionTitle name='About' />
                 <div className='md:flex items-center'>
                     <div className='md:w-1/2 flex justify-center'>

@@ -15,7 +15,7 @@ const Course = ({ course }) => {
                         <span className='font-bold text-gray-600'>price : {price}TK</span>
                         <span className='flex whitespace-nowrap border border-primary p-1 rounded-xl text-primary'> <ClockIcon className='w-4 mr-2' /> {duration} D</span>
                     </div>
-                    <button className="btn btn-primary"><Link to={`course-detail/${id}`}>Buy Now</Link></button>
+                    <Link to={`course-detail/${id}`}><button className="btn btn-primary">Buy Now</button></Link>
                 </div>
             </div>
         </div>

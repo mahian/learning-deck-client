@@ -45,7 +45,7 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div onClick={handleTheme} className={`w-10 h-10 p-1 rounded-full cursor-pointer mr-5 ${!dark ? 'bg-black text-white' : 'bg-gray-50'}`}>
+                    <div onClick={handleTheme} className={`w-10 h-10 p-1 rounded-full cursor-pointer mr-5 hidden md:block ${!dark ? 'bg-black text-white' : 'bg-gray-50'}`}>
                         {!dark ? 
                         <MoonIcon /> :
                         <SunIcon />

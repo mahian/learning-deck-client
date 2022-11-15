@@ -12,7 +12,8 @@ const githubProvider = new GithubAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
 const UserContext = ({ children }) => {
-    const [user, serUser] = useState(null);
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     // authentication functions
     const createUser = (email, password) => {
@@ -20,6 +21,7 @@ const UserContext = ({ children }) => {
     }
 
     const loginWithEmail = (email, password) => {
+        // setLoading(false);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -43,10 +45,20 @@ const UserContext = ({ children }) => {
     // change auth state
     useEffect(() => {
         onAuthStateChanged(auth, currentUser => {
-            serUser(currentUser);
+            setUser(currentUser);
+            setLoading(false)
         })
     }, []);
-    const authInfo = { user, createUser, signInWithGoogle, logOut, loginWithEmail, signInWithGithub, signInWithFacebook };
+    const authInfo = { 
+        user, 
+        createUser, 
+        signInWithGoogle, 
+        logOut, 
+        loginWithEmail, 
+        signInWithGithub, 
+        signInWithFacebook,
+        loading
+    };
     return (
         <div>
             <authContext.Provider value={authInfo}>

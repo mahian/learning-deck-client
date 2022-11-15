@@ -52,7 +52,7 @@ const FaqElement = ({ faq }) => {
 
 const Faq = () => {
     return (
-        <div className='container mx-auto relative py-[80px]'>
+        <div className='container mx-auto relative py-[80px] px-3'>
             <SectionTitle name='faq question'/>
             <div className='flex flex-col-reverse md:flex-row items-center'>
                 <div className='md:w-6/12 my-5'>

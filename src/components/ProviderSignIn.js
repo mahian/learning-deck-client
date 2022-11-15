@@ -1,12 +1,19 @@
 import React from 'react';
 import { useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
 
 const ProviderSignIn = () => {
     const {signInWithGoogle, signInWithGithub, signInWithFacebook} = useContext(authContext);
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.form?.pathname || '/';
     const handleGoogleSignIn = ()=> {
         signInWithGoogle()
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+            navigate(from, {replace: true})
+        })
         .catch(err => console.log(err))
     }
     const handleGithubSignIn = ()=> {
