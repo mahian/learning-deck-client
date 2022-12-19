@@ -9,7 +9,7 @@ const Login = () => {
     const location = useLocation()
     const from = location.state?.form?.pathname || '/';
     const navigate = useNavigate()
-    console.log(navigate);
+    console.log("navigate : ", from);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;

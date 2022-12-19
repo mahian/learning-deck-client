@@ -5,7 +5,7 @@ import { authContext } from '../context/UserContext';
 
 const PrivetRoute = ({children}) => {
     const {user, loading} = useContext(authContext);
-    const location = useLocation()
+    const location = useLocation();
 
     if(loading){
         return <p className='text-center'>loading...</p>
