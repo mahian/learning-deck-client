@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer aria-label="Site Footer" className="bg-gray-100">
+        <footer aria-label="Site Footer" className="bg-gray-100 dark:bg-gray-800 dark:text-white">
             <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-md">
                     <strong
-                        className="block text-center text-xl font-medium text-gray-900 sm:text-3xl"
+                        className="block text-center text-xl font-medium text-gray-900 dark:text-white sm:text-3xl"
                     >
                         Want us to email you with the latest blockbuster news?
                     </strong>
@@ -17,7 +17,7 @@ const Footer = () => {
                             <label className="sr-only" for="email"> Email </label>
 
                             <input
-                                className="w-full rounded-full border-white bg-white focus:outline-primary p-4 pr-32 text-sm font-medium"
+                                className="w-full rounded-full border-white dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-primary p-4 pr-32 text-sm font-medium"
                                 id="email"
                                 type="email"
                                 placeholder="john@doe.com"
@@ -156,7 +156,7 @@ const Footer = () => {
                         className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left"
                     >
                         <div>
-                            <strong className="font-medium text-gray-900"> Services </strong>
+                            <strong className="font-medium text-gray-900 dark:text-gray-100"> Services </strong>
 
                             <nav
                                 aria-label="Footer Services Nav"
@@ -178,7 +178,7 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <strong className="font-medium text-gray-900"> About </strong>
+                            <strong className="font-medium text-gray-900 dark:text-gray-100"> About </strong>
 
                             <nav
                                 aria-label="Footer About Nav"
@@ -200,7 +200,7 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <strong className="font-medium text-gray-900"> Support </strong>
+                            <strong className="font-medium text-gray-900 dark:text-gray-100"> Support </strong>
 
                             <nav
                                 aria-label="Footer Support Nav"

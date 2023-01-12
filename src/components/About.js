@@ -1,14 +1,12 @@
 import React from 'react';
-import SectionTitle from '../utilitys/SectionTitle';
 
 const About = () => {
     return (
-        <section className='py-[80px]'>
+        <section className='py-[80px] dark:bg-gray-800 dark:text-white'>
             <div className='container mx-auto px-3'>
-                <SectionTitle name='About' />
                 <div className='md:flex items-center'>
                     <div className='md:w-1/2 flex justify-center'>
-                        <img src="assets/vector_1.png" alt="" />
+                        <img className='w-full m-20' src="assets/vector_1.png" alt="" />
                     </div>
                     <div className='md:w-1/2'>
                         <p className='text-primary text-2xl'>Welcome to</p>

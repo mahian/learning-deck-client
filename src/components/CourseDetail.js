@@ -9,14 +9,14 @@ const CourseDetail = () => {
     const ref = React.createRef();
 
     return (
-        <div ref={ref}>
+        <div ref={ref} className="dark:bg-gray-800 dark:text-gray-50">
             <div className='relative flex justify-center items-center'>
                 <img className='w-full h-96 object-cover' src={image} alt="tut" />
                 <div className='bg-black absolute top-0 w-full h-full opacity-70'>
                 </div>
                 <h2 className='text-6xl text-center mx-3 font-bold absolute text-white'>{title}</h2>
             </div>
-            <div className='container mx-auto my-[80px] px-3'>
+            <div className='container mx-auto py-[80px] px-3'>
                 <div className='grid md:grid-cols-3 gap-5'>
                     <div className='bg-gray-100 p-5 font-bold text-green-500 w-full'>duration : {duration}D</div>
                     <div className='bg-gray-100 p-5 font-bold text-red-500 w-full'>total student : 117</div>

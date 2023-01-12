@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { useState } from 'react';
-import SectionTitle from '../utilitys/SectionTitle';
 
 const faqData = [
     {
@@ -38,12 +37,12 @@ const FaqElement = ({ faq }) => {
         setOpen(!open)
     }
     return (
-        <div className='border rounded-lg overflow-hidden my-5'>
+        <div className='rounded-lg overflow-hidden my-5'>
             <div onClick={handleClick} className='flex justify-between items-center bg-primary text-white p-5 relative hover:opacity-90 transition cursor-pointer'>
                 <h2 className='text-2xl font-semibold'>{faq.question}</h2>
                 <ChevronDownIcon className={`w-7 transition-all ${!open ? '' : 'rotate-180'}`} />
             </div>
-            <div className={`bg-slate-100 transition-all ${!open ? 'max-h-0' : 'max-h-96'} `}>
+            <div className={`bg-slate-100 dark:bg-gray-700 dark:text-gray-50 transition-all ${!open ? 'max-h-0' : 'max-h-96'} `}>
                 <p className='p-5'>{faq.answer}</p>
             </div>
         </div>
@@ -52,17 +51,18 @@ const FaqElement = ({ faq }) => {
 
 const Faq = () => {
     return (
-        <div className='container mx-auto relative py-[80px] px-3'>
-            <SectionTitle name='faq question'/>
-            <div className='flex flex-col-reverse md:flex-row items-center'>
-                <div className='md:w-6/12 my-5'>
-                    {faqData.map(faq => <FaqElement faq={faq} />)}
-                </div>
-                <div className='flex justify-center md:w-6/12'>
-                    <img className='md:max-w-sm' src="assets/faq.jpg" alt="" />
+        <section className='dark:bg-gray-800 dark:text-white'>
+            <div className='container mx-auto relative py-[80px] px-3'>
+                <div className='flex flex-col-reverse md:flex-row items-center'>
+                    <div className='md:w-6/12 my-5'>
+                        {faqData.map(faq => <FaqElement faq={faq} />)}
+                    </div>
+                    <div className='flex justify-center md:w-6/12'>
+                        <img className='md:max-w-sm' src="assets/faq.jpg" alt="" />
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

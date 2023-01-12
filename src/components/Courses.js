@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Blocks } from 'react-loader-spinner';
 import Course from './Course';
 import SideBar from './SideBar';
 
@@ -18,23 +17,23 @@ const Courses = () => {
         }
         fetchCourses();
     }, [id]);
-    if (loading) {
-        return <div className='flex items-center justify-center'>
-            <Blocks
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="blocks-loading"
-                wrapperStyle={{}}
-                wrapperClass="blocks-wrapper"
-            />
-        </div>
-    }
+    // if (loading) {
+    //     return <div className='flex items-center justify-center'>
+    //         <Blocks
+    //             visible={true}
+    //             height="80"
+    //             width="80"
+    //             ariaLabel="blocks-loading"
+    //             wrapperStyle={{}}
+    //             wrapperClass="blocks-wrapper"
+    //         />
+    //     </div>
+    // }
     const handleClick = (id) => {
         setId(id);
     }
     return (
-        <section className='bg-slate-300'>
+        <section className='bg-slate-100 dark:bg-gray-700'>
             <div className='md:flex md:h-screen'>
                 <div className='md:w-96 mr-3'><SideBar handleClick={handleClick} /></div>
                 <div className='overflow-y-scroll no-scrollbar'>

@@ -24,7 +24,7 @@ const Login = () => {
             .catch(err => alert(err.message));
     }
     return (
-        <section className='py-20 min-h-screen'>
+        <section className='py-20 min-h-screen dark:bg-gray-800'>
             <div className="container mx-auto">
                 <div className="md:w-[600px] mx-auto">
                     <div className="card flex-shrink-0 shadow-2xl bg-base-100">
