@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
 import ProviderSignIn from './ProviderSignIn';
 
@@ -15,22 +15,24 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         createUser(email, password)
-        .then(res => {
-            form.reset()
-            navigate('/');
-            alert('user created successfully')
-        })
-        .catch(err => alert(err.message));
+            .then(res => {
+                form.reset()
+                navigate('/');
+                alert('user created successfully')
+            })
+            .catch(err => alert(err.message));
     }
     return (
-        <section className='py-10'>
+        <section className='py-20 min-h-screen'>
             <div className="container mx-auto">
-                <div className="md:w-[450px] mx-auto">
-                    <div>
-                        <h1 className="text-4xl font-bold mb-2">Register now!</h1>
-                    </div>
+                <div className="md:w-[600px] mx-auto">
+
                     <div className="card flex-shrink-0 shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">
+                            <div>
+                                <h1 className="text-4xl font-bold mb-1">Register now!</h1>
+                            </div>
+                            <p className='text-gray-500 mb-3'>allready have an account? <Link to="../login" className='text-primary hover:underline'>please Login</Link></p>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">full name</span>
@@ -55,7 +57,7 @@ const Register = () => {
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" />
                                 <label className="label mt-2">
-                                    <input type="checkbox"/> <p className='text-gray-500 ml-2'>accept terms and condition</p>
+                                    <input type="checkbox" /> <p className='text-gray-500 ml-2'>accept terms and condition</p>
                                 </label>
                             </div>
                             <div className="form-control mt-6">

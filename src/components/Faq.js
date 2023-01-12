@@ -40,7 +40,7 @@ const FaqElement = ({ faq }) => {
     return (
         <div className='border rounded-lg overflow-hidden my-5'>
             <div onClick={handleClick} className='flex justify-between items-center bg-primary text-white p-5 relative hover:opacity-90 transition cursor-pointer'>
-                <h2 className='text-2xl font-bold'>{faq.question}</h2>
+                <h2 className='text-2xl font-semibold'>{faq.question}</h2>
                 <ChevronDownIcon className={`w-7 transition-all ${!open ? '' : 'rotate-180'}`} />
             </div>
             <div className={`bg-slate-100 transition-all ${!open ? 'max-h-0' : 'max-h-96'} `}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../context/UserContext';
 import ProviderSignIn from './ProviderSignIn';
 
@@ -16,22 +16,23 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         loginWithEmail(email, password)
-        .then(res => {
-            form.reset()
-            navigate(from, {replace : true});
-            alert('logged in successfully')
-        })
-        .catch(err => alert(err.message));
+            .then(res => {
+                form.reset()
+                navigate(from, { replace: true });
+                alert('logged in successfully')
+            })
+            .catch(err => alert(err.message));
     }
     return (
-        <section className='py-10'>
+        <section className='py-20 min-h-screen'>
             <div className="container mx-auto">
-                <div className="md:w-[450px] mx-auto">
-                    <div>
-                        <h1 className="text-4xl font-bold mb-2">Login now!</h1>
-                    </div>
+                <div className="md:w-[600px] mx-auto">
                     <div className="card flex-shrink-0 shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">
+                            <div>
+                                <h1 className="text-4xl font-bold mb-1">Login now!</h1>
+                            </div>
+                            <p className='text-gray-500 mb-3'>not have an account yet? <Link to="../register" className='text-primary hover:underline'>please Register</Link></p>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

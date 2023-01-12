@@ -24,12 +24,12 @@ function App() {
         },
         {
           path: 'courses',
-          element: <PrivetRoute><Courses /></PrivetRoute>,
+          element: <Courses />,
         },
         {
           path: 'courses/course-detail/:id',
           loader: ({params})=> fetch(`https://learning-deck-server.vercel.app/courses/${params.id}`),
-          element: <PrivetRoute><CourseDetail /></PrivetRoute>,
+          element: <CourseDetail />,
         },
         {
           path: 'courses/checkout/:id',
